@@ -138,6 +138,24 @@
               </div>
             {% endfor %}
           </div>
+            {% for item in appetizers %}
+              <div class="row">
+                <div class="col-md-2 col-sm-12">
+                  <img class="rounded" width="150" height="100" src="{{ item.image.url }}">
+                </div>
+                <div class="col-md-8 col-sm-12">
+                  <div class="d-flex flex-row">
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input " name="items[]" value="{{ item.pk }}">
+                      <label for="" class="form-check-label fw-bold">{{ item.name }}</label> <span><p class="lead">Price: Ksh: {{ item.price }}</p></span>
+                    </div>
+                    
+                  </div>
+                  <p>{{ item.description }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>          
           <div class="row justify-content-center">
             <div class="col col-lg-8 text-center col-sm-12 col-md-8">
               <div class="form-group pt-3">
