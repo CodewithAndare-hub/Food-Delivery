@@ -74,6 +74,7 @@ class Order(View):
         email_from = settings.EMAIL_HOST_USER
         body = ('Thank you for your order! Your food is been prepared and will be delivered soon\n '
                 f'Your total: {price}\n'
+                f'Your order items: {order_items['items']}\n'                
                 'Thank You again for the Order!')
         send_mail(
             subject='Thank you for the order', message=body, recipient_list=[email], fail_silently=False, from_email=email_from
